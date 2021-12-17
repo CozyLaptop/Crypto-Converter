@@ -12,7 +12,7 @@ function refreshBNBPrice(id) {
         });
     });
 }
-//10 second interval refresh
+//5 second interval refresh
 setInterval(refreshBNBPrice, 5 * 1000, id = "binancecoin");
 
 //Loads the top 100 coins (by marketcap) into the global array
@@ -24,6 +24,7 @@ function loadTop100CG(){
         });
     }).then(()=>{
         console.log(coinArray);
+        loadSelectOptions();
     });
     });
 }
@@ -53,4 +54,12 @@ $(".convertButton").click(()=>{
 //Init
 loadTop100CG();
 onLoadDefaultValues("binancecoin");
+function loadSelectOptions(){
+    var inputCurrencySelect = document.getElementById("inputCurrencySelect");
+    var outputCurrencySelect = document.getElementById("outputCurrencySelect");
+    coinArray.forEach(coin=>{
+        inputCurrencySelect.innerHTML += `<option id="${coin.id}">${coin.symbol.toUpperCase()}</option>`
+        outputCurrencySelect.innerHTML += `<option id="${coin.id}">${coin.symbol.toUpperCase()}</option>`
+    });
+}
 
