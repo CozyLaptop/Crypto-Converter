@@ -6,7 +6,6 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
-//-As you type, the conversion will happen automatically(preferably without a call every time)
 //-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
 //and vice-versa
 //-A history of converts(will have to be done when clicking the convert button)
