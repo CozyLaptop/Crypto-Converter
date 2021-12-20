@@ -1,9 +1,17 @@
 const url = "https://api.coingecko.com/api/v3/";
-var coinArray = [];
+let coinArray = [];
 let selectedInputPriceInUsd;
 let selectedOutputPriceInUsd;
 let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
+
+//Wanted features:
+//-As you type, the conversion will happen automatically(preferably without a call every time)
+//-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
+//and vice-versa
+//-A history of converts(will have to be done when clicking the convert button)
+//-Add favicon
+//-Add logo to top-left of page
 
 //Refreshes the coin price whenever selects are changed
 function refreshCoinPrice() {
@@ -26,7 +34,7 @@ function refreshCoinPrice() {
     });
 }
 //5 second interval refresh
-// setInterval(refreshCoinPrice, 5 * 1000, id = inputSelectedCryptoId);
+setInterval(refreshCoinPrice, 5 * 1000);
 
 //Loads the top 100 coins (by marketcap) into the global array
 function loadTop100CG(){
@@ -41,6 +49,7 @@ function loadTop100CG(){
     });
     });
 }
+//Loads up the select options of input and output of the top 100 cryptos
 function loadSelectOptions(){
     var inputCurrencySelect = document.getElementById("inputCurrencySelect");
     var outputCurrencySelect = document.getElementById("outputCurrencySelect");
@@ -60,7 +69,7 @@ function onLoadDefaultValues(id){
         //Left input
         document.getElementById("inputQuantity").value = 1;
         //Right output
-        document.getElementById("outputQuantity").value = Number(selectedInputPriceInUsd).toFixed(2);;
+        document.getElementById("outputQuantity").value = Number(selectedInputPriceInUsd).toFixed(2);
     });
     });
 }
@@ -78,11 +87,14 @@ document.getElementById('inputCurrencySelect').addEventListener('change', functi
     refreshCoinPrice();
 });
 //Upon changing select of output, will convert automatically
-document.getElementById('outputCurrencySelect').addEventListener('change', function(e) {
+document.getElementById('outputCurrencySelect').addEventListener('change', function() {
     var _outputCurrencySelect = document.getElementById("outputCurrencySelect");
     outputSelectedCryptoId = _outputCurrencySelect[_outputCurrencySelect.selectedIndex].id;
     refreshCoinPrice();
 });
+document.getElementById('inputQuantity').oninput = function (){
+    document.getElementById('outputQuantity').value = (document.getElementById('inputQuantity').value * selectedInputPriceInUsd).toFixed(2);
+};
 //Init
 loadTop100CG();
 onLoadDefaultValues("bitcoin");
