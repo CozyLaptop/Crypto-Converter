@@ -6,6 +6,8 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
+//-Add USD to input select
+//-Add other currencies (British pound, AUS dollar, etc.)
 //-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
 //and vice-versa
 //-A history of converts(will have to be done when clicking the convert button)
@@ -77,8 +79,6 @@ function onLoadDefaultValues(id){
 //Upon clicking convert button, will calculate the conversion
 $(".convertButton").click(()=>{
     refreshCoinPrice();
-    // let inputNum = document.getElementById("inputQuantity").value;
-    // document.getElementById("outputCryptoValue").value = Number(selectedInputPriceInUsd * inputNum).toFixed(2);
 });
 //Upon changing select of input, will convert automatically
 document.getElementById('inputCurrencySelect').addEventListener('change', function(e) {
