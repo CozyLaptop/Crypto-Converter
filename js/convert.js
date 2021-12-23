@@ -1,4 +1,5 @@
 const url = "https://api.coingecko.com/api/v3/";
+let today = new Date();
 let coinArray = [];
 let selectedInputPriceInUsd;
 let selectedOutputPriceInUsd;
@@ -18,6 +19,8 @@ let outputSelectedCryptoId;
 function refreshCoinPrice() {
     fetch(url + "/coins/" + inputSelectedCryptoId).then(response => {
         response.json().then(object => {
+            today = new Date();
+            document.getElementById("lastUpdatedTime").innerText = `${today.toLocaleString()}`;
             document.getElementById("selected-crypto-header").innerText = object.symbol.toUpperCase();
             selectedInputPriceInUsd = object.market_data.current_price.usd;
             document.getElementById("currentCryptoPrice-header").innerText = selectedInputPriceInUsd;
@@ -63,6 +66,8 @@ function loadSelectOptions(){
 //    This function will load default values on page load
 //    Currently is set for BTC
 function onLoadDefaultValues(id){
+
+    document.getElementById("lastUpdatedTime").innerText = `${today.toLocaleString()}`;
     fetch(url + "/coins/" + id).then(response=>{response.json().then(object=>{
         document.getElementById("selected-crypto-header").innerText = object.symbol.toUpperCase();
         selectedInputPriceInUsd = object.market_data.current_price.usd;
