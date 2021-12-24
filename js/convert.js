@@ -7,6 +7,9 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
+//-Save date and time on saved conversions reeaalllyyy small
+//-Ability to delete saved conversions
+//-Reverse the order of saved conversions
 //-Add USD to input select
 //-Add other currencies (British pound, AUS dollar, etc.)
 //-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
@@ -81,10 +84,17 @@ function onLoadDefaultValues(id){
 }
 
 //Events
-//Upon clicking convert button, will calculate the conversion
-$(".convertButton").click(()=>{
-    refreshCoinPrice();
-});
+//Upon clicking save button, will push into the saved conversions list in reverse order
+function saveConversion(){
+    var savedConversions = document.getElementById("savedConversions");
+    var savedConversionsInnerHTML = savedConversions.innerHTML;
+    var inputQuantity = document.getElementById("inputQuantity").value;
+    var inputAsset = document.getElementById("inputCurrencySelect").value;
+    var outputQuantity = document.getElementById("outputQuantity").value;
+    var outputAsset = document.getElementById("outputCurrencySelect").value;
+    savedConversions.innerHTML = `<div>${inputQuantity} ${inputAsset} == ${outputQuantity} ${outputAsset} </div>`;
+    savedConversions.innerHTML += savedConversionsInnerHTML;
+}
 //Upon changing select of input, will convert automatically
 document.getElementById('inputCurrencySelect').addEventListener('change', function(e) {
     inputSelectedCryptoId = e.target.options[e.target.selectedIndex].getAttribute('id');
