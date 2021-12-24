@@ -7,9 +7,9 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
+//-Make navbar span across entire page
 //-Save date and time on saved conversions reeaalllyyy small
 //-Ability to delete saved conversions
-//-Reverse the order of saved conversions
 //-Add USD to input select
 //-Add other currencies (British pound, AUS dollar, etc.)
 //-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
