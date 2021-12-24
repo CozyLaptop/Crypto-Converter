@@ -14,7 +14,6 @@ let outputSelectedCryptoId;
 //-Add other currencies (British pound, AUS dollar, etc.)
 //-When the middle arrows button is clicked, the selects and quantities will be swapped from input to output
 //and vice-versa
-//-A history of converts(will have to be done when clicking the convert button)
 //-Add favicon
 //-Add logo to top-left of page
 
