@@ -7,8 +7,8 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
-//-Make navbar span across entire page
-//-Save date and time on saved conversions reeaalllyyy small
+//-Add a light/dark mode
+//-Save date and time on saved conversions
 //-Ability to delete saved conversions
 //-Add USD to input select
 //-Add other currencies (British pound, AUS dollar, etc.)
