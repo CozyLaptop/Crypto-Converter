@@ -7,7 +7,7 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
-//-Add a light/dark mode
+//-Add a light/dark mode button to toggle
 //-Save date and time on saved conversions
 //-Ability to delete saved conversions
 //-Add USD to input select
