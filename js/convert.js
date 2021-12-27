@@ -108,6 +108,12 @@ document.getElementById('outputCurrencySelect').addEventListener('change', funct
 document.getElementById('inputQuantity').oninput = function (){
     document.getElementById('outputQuantity').value = (document.getElementById('inputQuantity').value * selectedInputPriceInUsd).toFixed(2);
 };
+//Light & dark mode change
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    console.log("Dark mode!")
+} else {
+    console.log("Light mode!")
+}
 //Init
 loadTop100CG();
 onLoadDefaultValues("bitcoin");
