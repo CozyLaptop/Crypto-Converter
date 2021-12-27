@@ -5,6 +5,7 @@ let selectedInputPriceInUsd;
 let selectedOutputPriceInUsd;
 let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
+var darkMode = false;
 
 //Wanted features:
 //-Add a light/dark mode button to toggle
@@ -109,10 +110,31 @@ document.getElementById('inputQuantity').oninput = function (){
     document.getElementById('outputQuantity').value = (document.getElementById('inputQuantity').value * selectedInputPriceInUsd).toFixed(2);
 };
 //Light & dark mode change
+var darkModeSwitch = document.querySelector(".darkModeSwitch");
+var sunIcon = document.getElementById("lightModeIcon");
+var moonIcon = document.getElementById("darkModeIcon");
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    darkModeSwitch.checked = true;
+    moonIcon.style.display = "block";
+    sunIcon.style.display = "none";
     console.log("Dark mode!")
 } else {
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "block";
     console.log("Light mode!")
+}
+
+function darkModeSwitchFunction(){
+    if (darkModeSwitch.checked){
+        moonIcon.style.display = "block";
+        sunIcon.style.display = "none";
+        console.log("Checked")
+    } else {
+        moonIcon.style.display = "none";
+        sunIcon.style.display = "block";
+        console.log("Unchecked")
+    }
 }
 //Init
 loadTop100CG();
