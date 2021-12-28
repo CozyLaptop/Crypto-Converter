@@ -5,10 +5,8 @@ let selectedInputPriceInUsd;
 let selectedOutputPriceInUsd;
 let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
-var darkMode = false;
 
 //Wanted features:
-//-Add a light/dark mode button to toggle
 //-Save date and time on saved conversions
 //-Ability to delete saved conversions
 //-Add USD to input select
@@ -114,27 +112,37 @@ var darkModeSwitch = document.querySelector(".darkModeSwitch");
 var sunIcon = document.getElementById("lightModeIcon");
 var moonIcon = document.getElementById("darkModeIcon");
 
+//Init of dark mode
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     darkModeSwitch.checked = true;
-    moonIcon.style.display = "block";
-    sunIcon.style.display = "none";
-    console.log("Dark mode!")
+    activateDarkMode();
 } else {
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "block";
-    console.log("Light mode!")
+    deactivateDarkMode();
 }
 
 function darkModeSwitchFunction(){
     if (darkModeSwitch.checked){
-        moonIcon.style.display = "block";
-        sunIcon.style.display = "none";
-        console.log("Checked")
+        activateDarkMode();
     } else {
-        moonIcon.style.display = "none";
-        sunIcon.style.display = "block";
-        console.log("Unchecked")
+        deactivateDarkMode();
     }
+}
+function activateDarkMode(){
+    moonIcon.style.display = "block";
+    sunIcon.style.display = "none";
+    document.querySelector(".background_main").classList.add("darkMode-1");
+    document.querySelector(".converter-header").classList.add("darkMode-2");
+    document.querySelectorAll('.form-control').forEach(x=>x.classList.add('darkMode-2'));
+    document.querySelectorAll('.form-select').forEach(x=>x.classList.add('darkMode-2'))
+}
+function deactivateDarkMode(){
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "block";
+    document.querySelector(".background_main").classList.remove("darkMode-1");
+    document.querySelector(".converter-header").classList.remove("darkMode-2");
+    document.querySelectorAll('.form-control').forEach(x=>x.classList.remove('darkMode-2'));
+    document.querySelectorAll('.form-select').forEach(x=>x.classList.remove('darkMode-2'))
+
 }
 //Init
 loadTop100CG();

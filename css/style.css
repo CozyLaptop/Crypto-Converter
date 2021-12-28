@@ -4,16 +4,14 @@
 .converter-header{
     background-color: white;
 }
-@media (prefers-color-scheme: dark) {
-    .background_main {
-        background-color: #081B33;
-        color: #e7eaed;
-    }
-    .converter-header{
-        background-color: #112841;
-    }
+.darkMode-1{
+    background-color: #081B33;
+    color: #e7eaed;
 }
-
+.darkMode-2{
+    background-color: #112841;
+    color: #e7eaed;
+}
 .header{
     padding: .5rem 1rem;
     display: flex;
