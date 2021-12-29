@@ -7,6 +7,9 @@ let inputSelectedCryptoId = "bitcoin";
 let outputSelectedCryptoId;
 
 //Wanted features:
+//-Search feature on selects
+//-Save conversions on local storage
+//-Envelope main app into a card or container
 //-Save date and time on saved conversions
 //-Ability to delete saved conversions
 //-Add USD to input select
@@ -108,6 +111,7 @@ document.getElementById('inputQuantity').oninput = function (){
     document.getElementById('outputQuantity').value = (document.getElementById('inputQuantity').value * selectedInputPriceInUsd).toFixed(2);
 };
 //Light & dark mode change
+var root = document.querySelector(':root');
 var darkModeSwitch = document.querySelector(".darkModeSwitch");
 var sunIcon = document.getElementById("lightModeIcon");
 var moonIcon = document.getElementById("darkModeIcon");
@@ -130,18 +134,20 @@ function darkModeSwitchFunction(){
 function activateDarkMode(){
     moonIcon.style.display = "block";
     sunIcon.style.display = "none";
-    document.querySelector(".background_main").classList.add("darkMode-1");
-    document.querySelector(".converter-header").classList.add("darkMode-2");
-    document.querySelectorAll('.form-control').forEach(x=>x.classList.add('darkMode-2'));
-    document.querySelectorAll('.form-select').forEach(x=>x.classList.add('darkMode-2'))
+    root.style.setProperty('--primary-color', '#081B33');
+    // document.querySelector(".background_main").classList.add("darkMode-1");
+    // document.querySelector(".converter-header").classList.add("darkMode-2");
+    // document.querySelectorAll('.form-control').forEach(x=>x.classList.add('darkMode-2'));
+    // document.querySelectorAll('.custom-select').forEach(x=>x.classList.add('darkMode-2'))
 }
 function deactivateDarkMode(){
     moonIcon.style.display = "none";
     sunIcon.style.display = "block";
-    document.querySelector(".background_main").classList.remove("darkMode-1");
-    document.querySelector(".converter-header").classList.remove("darkMode-2");
-    document.querySelectorAll('.form-control').forEach(x=>x.classList.remove('darkMode-2'));
-    document.querySelectorAll('.form-select').forEach(x=>x.classList.remove('darkMode-2'))
+    root.style.setProperty('--primary-color', 'lightskyblue');
+    // document.querySelector(".background_main").classList.remove("darkMode-1");
+    // document.querySelector(".converter-header").classList.remove("darkMode-2");
+    // document.querySelectorAll('.form-control').forEach(x=>x.classList.remove('darkMode-2'));
+    // document.querySelectorAll('.custom-select').forEach(x=>x.classList.remove('darkMode-2'))
 
 }
 //Init

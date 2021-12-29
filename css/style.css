@@ -1,24 +1,46 @@
-.background_main{
-    background-color: lightskyblue;
+:root{
+    --primary-color: lightskyblue;
+    --secondary-color: white;
+    --primary-font-color: black;
+    --secondary-font-color: #495057;
+
+}
+/*.background_main{*/
+/*    background-color: var(--primary-color);*/
+/*}*/
+body{
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
 }
 .converter-header{
-    background-color: white;
+    background-color: var(--secondary-color);
 }
-.darkMode-1{
-    background-color: #081B33;
-    color: #e7eaed;
+.form-control{
+    background-color: var(--secondary-color);
+    color: var(--secondary-font-color);
 }
-.darkMode-2{
-    background-color: #112841;
-    color: #e7eaed;
+#savedConversions{
+    color: var(--secondary-font-color);
 }
+/*#lastUpdatedTime{*/
+/*    color: var(--secondary-font-color);*/
+/*}*/
+/*#savedConversions{*/
+/*    color: var(--secondary-font-color);*/
+/*}*/
+/*.darkMode-1{*/
+/*    background-color: var(--dark-color-1);*/
+/*    color: #e7eaed;*/
+/*}*/
+/*.darkMode-2{*/
+/*    background-color: #112841;!important;*/
+/*    color: #e7eaed;!important;*/
+/*}*/
 .header{
     padding: .5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-.header{
     box-shadow: 0 3px 7px -3px rgba(0,0,0,.15);
     height: 4.8rem;
 }
