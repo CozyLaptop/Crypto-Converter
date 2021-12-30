@@ -5,9 +5,6 @@
     --secondary-font-color: #495057;
 
 }
-/*.background_main{*/
-/*    background-color: var(--primary-color);*/
-/*}*/
 body{
     background-color: var(--primary-color);
     color: var(--primary-font-color);
@@ -30,7 +27,6 @@ body{
 hr{
     background-color: var(--secondary-color);
 }
-
 .header{
     padding: .5rem 1rem;
     display: flex;
