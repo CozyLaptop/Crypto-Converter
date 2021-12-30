@@ -135,20 +135,17 @@ function activateDarkMode(){
     moonIcon.style.display = "block";
     sunIcon.style.display = "none";
     root.style.setProperty('--primary-color', '#081B33');
-    // document.querySelector(".background_main").classList.add("darkMode-1");
-    // document.querySelector(".converter-header").classList.add("darkMode-2");
-    // document.querySelectorAll('.form-control').forEach(x=>x.classList.add('darkMode-2'));
-    // document.querySelectorAll('.custom-select').forEach(x=>x.classList.add('darkMode-2'))
+    root.style.setProperty('--secondary-color', '#112841');
+    root.style.setProperty('--primary-font-color', '#e7eaed');
+    root.style.setProperty('--secondary-font-color', '#e7eaed');
 }
 function deactivateDarkMode(){
     moonIcon.style.display = "none";
     sunIcon.style.display = "block";
     root.style.setProperty('--primary-color', 'lightskyblue');
-    // document.querySelector(".background_main").classList.remove("darkMode-1");
-    // document.querySelector(".converter-header").classList.remove("darkMode-2");
-    // document.querySelectorAll('.form-control').forEach(x=>x.classList.remove('darkMode-2'));
-    // document.querySelectorAll('.custom-select').forEach(x=>x.classList.remove('darkMode-2'))
-
+    root.style.setProperty('--secondary-color', 'white');
+    root.style.setProperty('--primary-font-color', 'black');
+    root.style.setProperty('--secondary-font-color', '#495057');
 }
 //Init
 loadTop100CG();

@@ -15,27 +15,17 @@ body{
 .converter-header{
     background-color: var(--secondary-color);
 }
-.form-control{
+.form-control, .custom-select{
     background-color: var(--secondary-color);
     color: var(--secondary-font-color);
 }
 #savedConversions{
     color: var(--secondary-font-color);
 }
-/*#lastUpdatedTime{*/
-/*    color: var(--secondary-font-color);*/
-/*}*/
-/*#savedConversions{*/
-/*    color: var(--secondary-font-color);*/
-/*}*/
-/*.darkMode-1{*/
-/*    background-color: var(--dark-color-1);*/
-/*    color: #e7eaed;*/
-/*}*/
-/*.darkMode-2{*/
-/*    background-color: #112841;!important;*/
-/*    color: #e7eaed;!important;*/
-/*}*/
+hr{
+    background-color: var(--secondary-color);
+}
+
 .header{
     padding: .5rem 1rem;
     display: flex;
