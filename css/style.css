@@ -19,6 +19,11 @@ body{
     background-color: var(--secondary-color);
     color: var(--secondary-font-color);
 }
+.form-control:focus, .custom-select:focus{
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 rgba(0, 0, 0, 0);
+    background-color: var(--secondary-color);
+    color: var(--secondary-font-color);
+}
 #savedConversions{
     color: var(--secondary-font-color);
 }
