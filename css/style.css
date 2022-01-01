@@ -12,6 +12,10 @@ body{
 .converter-header{
     background-color: var(--secondary-color);
 }
+.converter-container{
+    border: solid 1px var(--secondary-font-color);
+    border-radius: 10px;
+}
 .form-control, .custom-select{
     background-color: var(--secondary-color);
     color: var(--secondary-font-color);
@@ -22,10 +26,10 @@ body{
     color: var(--secondary-font-color);
 }
 #savedConversions{
-    color: var(--secondary-font-color);
+    color: var(--primary-font-color);
 }
 hr{
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-font-color);
 }
 .header{
     padding: .5rem 1rem;
@@ -38,4 +42,7 @@ hr{
 .navbar-brand{
     text-shadow: rgba(0,0,0,.15) 3px 3px 3px;
     margin-right: auto;
+}
+.lastUpdatedContainer{
+    font-size: .8rem;
 }
