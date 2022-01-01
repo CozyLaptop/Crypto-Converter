@@ -9,7 +9,6 @@ let outputSelectedCryptoId;
 //Wanted features:
 //-Search feature on selects
 //-Save conversions on local storage
-//-Envelope main app into a card or container
 //-Save date and time on saved conversions
 //-Ability to delete saved conversions
 //-Add USD to input select
@@ -93,7 +92,9 @@ function saveConversion(){
     var inputAsset = document.getElementById("inputCurrencySelect").value;
     var outputQuantity = document.getElementById("outputQuantity").value;
     var outputAsset = document.getElementById("outputCurrencySelect").value;
-    savedConversions.innerHTML = `<div>${inputQuantity} ${inputAsset} == ${outputQuantity} ${outputAsset} </div>`;
+    var currentDayTime = new Date();
+    var savedConversionTime = currentDayTime.toLocaleString();
+    savedConversions.innerHTML = `<div class="mb-2 row justify-content-center"><div class="converter-container col-8 col-sm-6 col-md-4 col-lg-3"><div>${inputQuantity} ${inputAsset} == ${outputQuantity} ${outputAsset}</div><div class="savedConversionTime">${savedConversionTime}</div></div></div>`;
     savedConversions.innerHTML += savedConversionsInnerHTML;
 }
 //Upon changing select of input, will convert automatically

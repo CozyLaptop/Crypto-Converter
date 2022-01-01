@@ -28,6 +28,9 @@ body{
 #savedConversions{
     color: var(--primary-font-color);
 }
+.savedConversionTime{
+    font-size: .75rem;
+}
 hr{
     background-color: var(--secondary-font-color);
 }
@@ -44,5 +47,5 @@ hr{
     margin-right: auto;
 }
 .lastUpdatedContainer{
-    font-size: .8rem;
+    font-size: .75rem;
 }
