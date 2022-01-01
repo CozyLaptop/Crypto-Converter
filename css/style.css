@@ -3,7 +3,9 @@
     --secondary-color: white;
     --primary-font-color: black;
     --secondary-font-color: #495057;
+    --primary-border-color: #7389a5;
 
+    --dark-mode-border-color: #7389a5;
 }
 body{
     background-color: var(--primary-color);
@@ -13,8 +15,10 @@ body{
     background-color: var(--secondary-color);
 }
 .converter-container{
-    border: solid 1px var(--secondary-font-color);
+    border: solid 1px var(--dark-mode-border-color);
     border-radius: 10px;
+    box-shadow: 3px 3px 8px -3px rgba(0,0,0,.7);
+    background-color: var(--secondary-color);
 }
 .form-control, .custom-select{
     background-color: var(--secondary-color);
@@ -32,7 +36,7 @@ body{
     font-size: .75rem;
 }
 hr{
-    background-color: var(--secondary-font-color);
+    background-color: var(--primary-border-color);
 }
 .header{
     padding: .5rem 1rem;
